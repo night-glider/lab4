@@ -1,0 +1,31 @@
+<body>
+	test
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-messaging.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAiaOdWbNs9DVhr2s1aMzNEeZQfR329xhM",
+    authDomain: "lab4-ba4ff.firebaseapp.com",
+    projectId: "lab4-ba4ff",
+    storageBucket: "lab4-ba4ff.appspot.com",
+    messagingSenderId: "1049459439435",
+    appId: "1:1049459439435:web:4099bddb0c85b09de71ace",
+    measurementId: "G-F8EDKNDG9M"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  const messaging = getMessaging(app);
+  // Add the public key generated from the console here.
+  getToken(messaging, {vapidKey: "BOMYDx4JdFtLxrd3qPSd89DZB_BUMFNaa5kIcEQscNQfUZMOe0x8v7zswaP6Uwa5eyd-DO41z-v8P2qBq761BXg"});
+</script>
