@@ -1,5 +1,5 @@
 <body>
-  test
+
 </body>
 <script type="module">
   // Import the functions you need from the SDKs you need
@@ -41,5 +41,24 @@
   console.log('An error occurred while retrieving token. ', err);
   // ...
 });
+
+const options = {method: 'GET'};
+
+fetch('https://dailycatsapi-production.up.railway.app/get_cats', options)
+  .then(response => response.json())
+  .then(response => {
+    let result = response["result"]
+    console.log(result)
+    for(var i = 0; i < result.length; i++) {
+      const new_div = document.createElement("div")
+      new_div.innerHTML = "добавлен в " + result[i]["time"] + "<br>"
+      document.body.appendChild(new_div)
+      const new_img = document.createElement("img")
+      new_img.src = result[i]["url"]
+      new_div.appendChild(new_img)
+      }
+
+  })
+  .catch(err => console.error(err));
 
 </script>
