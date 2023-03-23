@@ -1,5 +1,5 @@
 <body>
-	test
+  test
 </body>
 <script type="module">
   // Import the functions you need from the SDKs you need
@@ -28,4 +28,10 @@
   const messaging = getMessaging(app);
   // Add the public key generated from the console here.
   getToken(messaging, {vapidKey: "BOMYDx4JdFtLxrd3qPSd89DZB_BUMFNaa5kIcEQscNQfUZMOe0x8v7zswaP6Uwa5eyd-DO41z-v8P2qBq761BXg"});
+
+  function requestPermission() {
+  console.log('Requesting permission...');
+  Notification.requestPermission().then((permission) => {
+  if (permission === 'granted') {
+    console.log('Notification permission granted.'); }}
 </script>
